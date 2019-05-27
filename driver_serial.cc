@@ -189,6 +189,8 @@ namespace imustd{
             wxMessageBox("error stopping imu driver");
             return;
         }
+        dataOut->Delete();
+        dataIn->Delete();
         driverSwitch->Unbind(wxEVT_BUTTON, &imustd::wxDriverSerial::onStop, this);
         driverSwitch->Bind(wxEVT_BUTTON, &imustd::wxDriverSerial::onStart, this);
         driverSwitch->SetLabel("Connect");

@@ -2,6 +2,7 @@
 
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
+    #include <wx/ffile.h>
 #endif
 
 #include <windows.h>

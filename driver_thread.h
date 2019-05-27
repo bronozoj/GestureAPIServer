@@ -3,10 +3,12 @@
 
 #include "driver_serial.h"
 #include "driver_recognizer.h"
+#include <unordered_map>
+#include <vector>
 
 namespace imustd{
     class wxDriverSerial;
-    class wxZPBTThread;
+    class wxRecogThread;
 
     class wxDataBufferThread : public wxThread{
         wxDriverSerial *caller;
@@ -35,7 +37,7 @@ namespace imustd{
         wxAPIThread(wxDriverSerial *parent) : wxThread(wxTHREAD_DETACHED){
             caller = parent;
         }
-        wxZPBTThread *recog;
+        wxRecogThread *recog;
 
         protected:
         virtual ExitCode Entry();
